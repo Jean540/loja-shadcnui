@@ -11,11 +11,13 @@ import {
 import { ShoppingCart } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { useCartStore } from "@/stores/cart-store";
-import { useEffect, useState } from "react";
 import { CartItem } from "./cartItem";
+import { useState } from "react";
 
 export function CartSideBar() {
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const { cart } = useCartStore((state) => state);
+
   let subTotal = 0;
 
   for (let item of cart) {
@@ -44,12 +46,19 @@ export function CartSideBar() {
         </div>
         <Separator className="my-4" />
         <div className="flex justify-between items-center text-xs">
-          <div className="">Subtotal: R${subTotal.toFixed(2)}</div>
-          <div className="">...</div>
+          <div className="">Subtotal:</div>
+          <div className=""> R${subTotal.toFixed(2)}</div>
         </div>
         <Separator className="my-4" />
         <div className="text-center">
-          <Button disabled={cart.length <= 0}>Finalizar Compra</Button>
+          const [checkoutOpen, setCheckoutOpen] = useState(false); const
+          [checkoutOpen, setCheckoutOpen] = useState(false);
+          <Button
+            disabled={cart.length <= 0}
+            onClick={() => setCheckoutOpen(true)}
+          >
+            Finalizar Compra
+          </Button>
         </div>
       </SheetContent>
     </Sheet>
