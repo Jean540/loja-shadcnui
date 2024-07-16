@@ -13,6 +13,7 @@ import { Separator } from "../ui/separator";
 import { useCartStore } from "@/stores/cart-store";
 import { CartItem } from "./cartItem";
 import { useState } from "react";
+import { CheckoutDialog } from "../checkout/checkoutDialog";
 
 export function CartSideBar() {
   const [checkoutOpen, setCheckoutOpen] = useState(false);
@@ -51,8 +52,6 @@ export function CartSideBar() {
         </div>
         <Separator className="my-4" />
         <div className="text-center">
-          const [checkoutOpen, setCheckoutOpen] = useState(false); const
-          [checkoutOpen, setCheckoutOpen] = useState(false);
           <Button
             disabled={cart.length <= 0}
             onClick={() => setCheckoutOpen(true)}
@@ -60,6 +59,7 @@ export function CartSideBar() {
             Finalizar Compra
           </Button>
         </div>
+        <CheckoutDialog open={checkoutOpen} onOpenChange={setCheckoutOpen} />
       </SheetContent>
     </Sheet>
   );
