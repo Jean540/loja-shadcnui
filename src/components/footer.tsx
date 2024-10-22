@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className="mt-5">
       <Separator />
-      <div className="py-5 text-center text-sm opacity-50">Criado por Jean</div>
+      <div className="my-5 text-center text-sm opacity-50">Criado por Jean</div>
     </footer>
   );
 };
